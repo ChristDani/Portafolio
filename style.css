@@ -9,12 +9,11 @@
     scroll-behavior: smooth;
 }
 
-/* body
+body
 {
-    min-height: 100vh;
-    overflow-y: hidden;
-    /* background: linear-gradient(rgb(40 100 152),rgb(77 153 203)); 
-} */
+    /* background-image: linear-gradient(to right top, #55bb9b, #0fb4ae, #00acc0, #00a1cd, #0094d3, #448dd6, #6a84d5, #897acd, #a474c9, #bc6ec1, #d266b6, #e560a6); */
+    background-image: linear-gradient(to right top, #6f6bd1, #6d74d7, #6c7edc, #6b86e0, #6c8fe4, #5a99e9, #49a2eb, #38aaec, #00b4e7, #00bcdd, #02c3d0, #40c9c1);
+}
 
 hgroup
 {
@@ -34,12 +33,13 @@ header.bajar
     backdrop-filter: blur(15px);
     position: sticky;
     top:0;
-    background: rgb(0 0 0 / 30%);
+    background: rgb(0 0 0 / 25%);
     padding: 10px 20px;
 }
 
 section
 {
+    text-align: center;
     padding-top: 90px;
     padding-bottom: 40px;
 }
@@ -49,10 +49,16 @@ section
     padding-top: 40px;
 }
 
+footer .Fing
+{
+    height: 60px;
+}
+
 header .ImgLogo
 {
     height: 60px;
 }
+
 
 header ul
 {
@@ -82,3 +88,27 @@ header ul li a:hover
     background: #162a43;
     color: #fff;
 }
+
+/* home */
+
+.yo
+{
+   border-radius: 50% 50% 50% 50% / 30% 30% 70% 70%;
+   border: solid;
+}
+
+/* presentacion */
+
+
+
+/* skill */
+
+
+
+/* proyect */
+
+
+
+/* contac */
+
+
