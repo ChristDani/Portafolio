@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap');
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body
+{
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: linear-gradient(rgb(40 100 152),rgb(77 153 203));
+}
+
+footer
+{
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: center;
+}
+
+header
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+}
+
+header.bajar
+{
+    background: #fff;
+    padding: 10px 20px;
+}
+
+header .logo
+{
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+header ul
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header ul li
+{
+    list-style: none;
+    margin-left: 20px;
+}
+
+header ul li a
+{
+    background: #fff;
+    text-decoration: none;
+    padding: 6px 15px;
+    color: #162a43;
+    border-radius: 20px;
+}
+
+header ul li a:hover
+{
+    background: #162a43;
+    color: #fff;
+}
+
+.presentacion
+{
+    position: relative;
+    padding: 70px;
+}
+
+.presentacion h2
+{
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    color: #162a43;
+}
+
+.skill
+{
+    position: relative;
+    padding: 70px;
+}
