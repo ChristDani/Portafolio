@@ -26,6 +26,7 @@ header
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 10;
 }
 
 header.bajar
@@ -35,13 +36,18 @@ header.bajar
     top:0;
     background: rgb(0 0 0 / 25%);
     padding: 10px 20px;
+    z-index: 10;
 }
 
 section
 {
-    text-align: center;
     padding-top: 90px;
     padding-bottom: 40px;
+}
+
+hgroup
+{
+    text-align: center;
 }
 
 .home
@@ -91,6 +97,13 @@ header ul li a:hover
 
 /* home */
 
+.contenidoYo
+{
+    text-align: center;
+    width: 80%;
+    margin-left: 10%;
+}
+
 .yo
 {
    border-radius: 50% 50% 50% 50% / 30% 30% 70% 70%;
@@ -99,16 +112,334 @@ header ul li a:hover
 
 /* presentacion */
 
+.contenedorSobreMi
+{
+    width: 80%;
+    margin-left: 10%;
+    align-content: center;
+    display: grid;
+    grid-template-columns: 35% 50%;
+    gap: 15%;
+}
 
+.sobreMi
+{
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 2rem;
+    background: linear-gradient(45deg, transparent, var(--color-primario), transparent);
+    display: grid;
+}
+
+.sobreMi-image
+{
+    border-radius: 2rem;
+    overflow: hidden;
+    transform: rotate(10deg);
+    transition: var(--transicion);
+}
+
+.sobreMi-image:hover
+{
+    transform: rotate(0);
+}
+
+.sobreMiCartas
+{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.sobreCartas
+{
+    backdrop-filter: blur(15px);
+    background: rgba(255, 255, 255, 0.25);
+    border: 1px solid transparent;
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: center;
+    display: grid;
+    place-items: center;
+}
+
+.sobreCartas:hover{
+    backdrop-filter: blur(15px);
+    background: rgb(0 0 0 / 25%);
+    cursor: default;
+}
+
+.icon{
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.sobreCartas h4{
+    font-size: 0.95rem;
+}
+
+.sobreCartas small{
+    font-size: 0.7rem;
+    color: var(--color-ligero);
+}
+
+.sobreMiContenido p{
+    margin: 2rem 0 2.6rem;
+    text-align: justify;
+}
 
 /* skill */
 
+.conteiner
+{
+    width: 70%;
+    margin-left: 15%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
 
+.conteiner > div
+{
+    backdrop-filter: blur(15px);
+    background: rgba(255, 255, 255, 0.25);
+    padding: 2.4rem 5rem;
+    border-radius: 2rem;
+    border: 1px solid transparent;
+    transition: var(--transicion);
+}
+
+.conteiner > div:hover
+{
+    backdrop-filter: blur(15px);
+    background: rgb(0 0 0 / 25%);
+    border-color: var(--color-primario-variante);
+}
+
+.conteiner > div h3
+{
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--color-primario);
+}
+
+.contenido{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.detalles{
+    display: flex;
+    gap: 1rem;
+}
+
+.icon{
+    margin-top: 6px;
+    color: var(--color-primario);
+}
+
+.detalles small{
+    margin-left: 0.5rem;
+}
+
+progress{
+    width: 4.5rem;
+}
 
 /* proyect */
 
+/* .webs, .desk
+{
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    overflow: hidden;
+    min-width: 600px;
+    max-width: 900px;
+    width: calc(100% - 100px);
+    height: 400px;
+}
 
+.sitio, .app
+{
+    overflow: hidden;
+    min-width: 60px;
+    margin: 10px;
+    background: var(--optionBackground, var(--defaultBackground, #E6E9ED));
+    background-size: auto 120%;
+    background-position: center;
+    cursor: pointer;
+    transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+}
+
+.sitio:nth-child(1), .app:nth-child(1)
+{
+    --defaultBackground:#ED5565;
+}
+.sitio:nth-child(2), .app:nth-child(2)
+{
+    --defaultBackground:#FC6E51;
+}
+.sitio:nth-child(3), .app:nth-child(3)
+{
+    --defaultBackground:#FFCE54;
+}
+.sitio:nth-child(4), .app:nth-child(4)
+{
+    --defaultBackground:#2ECC71;
+}
+.sitio:nth-child(5), .app:nth-child(5)
+{
+    --defaultBackground:#5D9CEC;
+}
+.sitio:nth-child(6), .app:nth-child(6)
+{
+    --defaultBackground:#AC92EC;
+}
+
+.active
+{
+    flex-grow: 10000;
+    max-width: 600px;
+    margin: 0px;
+    border-radius: 40px;
+    background-size: auto 100%;
+}
+
+.active .shadow 
+{
+    box-shadow: inset 0 -120px 120px -120px black, inset 0 -120px 120px -100px black;
+}
+
+.active .label 
+{
+    bottom: 20px;
+    left: 20px;
+}
+
+.active .label .info > div 
+{
+    left: 0px;
+    opacity: 1;
+}
+
+.sitio:not(.active), .app:not(.active) 
+{
+    flex-grow: 1;
+    border-radius: 30px;
+}
+
+.sitio:not(.active) .shadow, .app:not(.active) .shadow 
+{
+    bottom: -40px;
+    box-shadow: inset 0 -120px 0px -120px black, inset 0 -120px 0px -100px black;
+}
+
+.sitio:not(.active) .label, .app:not(.active) .label 
+{
+    bottom: 10px;
+    left: 10px;
+}
+
+.sitio:not(.active) .label .info > div, .app:not(.active) .label .info > div 
+{
+    left: 20px;
+    opacity: 0;
+}
+
+.sitio .shadow, .app .shadow
+{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 120px;
+    transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+}
+
+.sitio .label, .app .label
+{
+    display: flex;
+    position: absolute;
+    right: 0px;
+    height: 40px;
+    transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+}
+
+.sitio .label .icon, .app .label .icon
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    min-width: 40px;
+    max-width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background-color: white;
+    color: var(--defaultBackground);
+}
+
+.sitio .label .info, .app .label .info
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 10px;
+    color: white;
+    white-space: pre;
+}
+
+.sitio .label .info > div, .app .label .info > div
+{
+    position: relative;
+    transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95), opacity 0.5s ease-out;
+}
+
+.sitio .label .info .main, .app .label .info .main
+{
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.sitio .label .info .sub, .app .label .info .sub
+{
+    transition-delay: 0.1s;
+} */
 
 /* contac */
 
 
+/* boton contactar */
+
+.btn
+{
+    background: #fff;
+    text-decoration: none;
+    padding: 15px 15px;
+    color: #162a43;
+    border-radius: 0 40px 0 40px;
+}
+   
+.btn:hover
+{
+    background: #162a43;
+    color: #fff;
+}
+
+.btnD
+{
+    border: solid 1px;
+    text-decoration: none;
+    padding: 15px 15px;
+    border-radius: 40px 0 40px 0;
+    color: #fff;
+}
+
+.btnD:hover
+{
+    background: #162a43;
+    color: #fff;
+}
+   
