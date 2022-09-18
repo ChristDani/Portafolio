@@ -41,13 +41,14 @@ header.bajar
 
 section
 {
-    padding-top: 90px;
-    padding-bottom: 40px;
+    padding: 90px 0 40px 0;
+    margin: 20px 0 30px 0;
 }
 
 hgroup
 {
     text-align: center;
+    margin: 10px 0 30px 0;
 }
 
 .home
@@ -55,9 +56,23 @@ hgroup
     padding-top: 40px;
 }
 
-footer .Fing
+footer
 {
-    height: 60px;
+    width: 60%;
+    height: 200px;
+    display: grid;
+    justify-items: center;
+    margin: 40px 20% 30px 20%;
+}
+
+.TF
+{
+    padding: 30px;
+}
+
+footer .Fimg
+{
+    height: 120px;
 }
 
 header .ImgLogo
@@ -101,13 +116,24 @@ header ul li a:hover
 {
     text-align: center;
     width: 80%;
-    margin-left: 10%;
+    margin: 10px 10% 0 10%;
+}
+
+.cta
+{
+    margin: 10px 0 25px 0;
 }
 
 .yo
 {
-   border-radius: 50% 50% 50% 50% / 30% 30% 70% 70%;
-   border: solid;
+    margin: 10px;
+    border-radius: 50% 50% 50% 50% / 30% 30% 70% 70%;
+    border: solid 2px #162a43;
+}
+
+.yo:hover
+{
+    box-shadow: 0 0 2rem 0.5rem rgb(0 0 0 / 35%);
 }
 
 /* presentacion */
@@ -133,15 +159,15 @@ header ul li a:hover
 
 .sobreMi-image
 {
-    border-radius: 2rem;
+    border-radius: 50% 50% 50% 50% / 70% 70% 30% 30%;
     overflow: hidden;
-    transform: rotate(10deg);
-    transition: var(--transicion);
+    border: solid 2px #162a43;
 }
 
 .sobreMi-image:hover
 {
     transform: rotate(0);
+    box-shadow: 0 0 2rem 0.5rem rgb(0 0 0 / 35%);
 }
 
 .sobreMiCartas
@@ -410,6 +436,89 @@ progress{
 
 /* contac */
 
+.contenidoContacto
+{
+    width: 60%;
+    margin-left: 20%;
+    display: grid;
+    grid-template-columns: 30% 60%;
+    gap: 12%;
+    align-items: center;
+}
+
+.contactoOpciones
+{
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.contactoOpcion
+{
+    backdrop-filter: blur(15px);
+    background: rgba(255, 255, 255, 0.25);
+    padding: 1.2rem;
+    border-radius: 1.2rem;
+    text-align: center;
+    border: 1px solid transparent;
+    transition: var(--transicion);
+}
+
+.contactoOpcion:hover
+{
+    backdrop-filter: blur(15px);
+    background: rgb(0 0 0 / 25%);
+    border-color: var(--color-primario-variante);
+}
+
+.contactoOpcion-icon
+{
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.contactoOpcion a
+{
+    text-decoration: none;
+    color: #162a43;
+    margin-top: 0.7rem;
+    display: inline-block;
+    font-size: 0.8rem;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+form label{
+    position: relative;
+}
+
+form label span{
+    position: absolute;
+    left: 2.5rem;
+    top: -0.8rem;
+    backdrop-filter: blur(15px);
+    background: rgba(255, 255, 255, 0.25);
+    padding: 0 1rem;
+    border-radius: 2rem;
+}
+
+form label input, form label textarea{
+    width: 100%;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    background: none;
+    border: 2px solid #162a43;
+    color: #162a43;
+    outline: none;
+}
+
+form label input:hover, form label textarea:hover{
+    box-shadow: 0 0 2rem 0.5rem rgb(0 0 0 / 35%);
+}
 
 /* boton contactar */
 
@@ -443,3 +552,22 @@ progress{
     color: #fff;
 }
    
+.btnC
+{
+    width: 40%;
+    backdrop-filter: blur(15px);
+    background: rgba(255, 255, 255, 0.25);
+    padding: 15px 15px;
+    border-radius: 0 40px 0 40px;
+    color: black;
+    border: transparent;
+}
+
+.btnC:hover
+{
+    backdrop-filter: blur(15px);
+    background: rgb(0 0 0 / 25%);
+    color: #162a43;
+    border: 1px;
+    box-shadow: 0 0 2rem 0.5rem rgb(0 0 0 / 35%);
+}

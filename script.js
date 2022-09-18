@@ -6,8 +6,8 @@ window.addEventListener("scroll", function(){
 
 /* proyectos */
 
-$(".sitio").click(function(){
-    $(".sitio").removeClass("active");
-    $(this).addClass("active");
+// $(".sitio").click(function(){
+//     $(".sitio").removeClass("active");
+//     $(this).addClass("active");
     
- });
+//  });
