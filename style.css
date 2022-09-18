@@ -11,7 +11,6 @@
 
 body
 {
-    /* background-image: linear-gradient(to right top, #55bb9b, #0fb4ae, #00acc0, #00a1cd, #0094d3, #448dd6, #6a84d5, #897acd, #a474c9, #bc6ec1, #d266b6, #e560a6); */
     background-image: linear-gradient(to right top, #6f6bd1, #6d74d7, #6c7edc, #6b86e0, #6c8fe4, #5a99e9, #49a2eb, #38aaec, #00b4e7, #00bcdd, #02c3d0, #40c9c1);
 }
 
@@ -110,6 +109,13 @@ header ul li a:hover
     color: #fff;
 }
 
+@media screen and (max-width:600px)
+{
+    header{
+        overflow: hidden;
+    }
+}
+
 /* home */
 
 .contenidoYo
@@ -127,6 +133,7 @@ header ul li a:hover
 .yo
 {
     margin: 10px;
+    background-image: linear-gradient(to top, #f072ba, #db7cca, #c385d5, #aa8edb, #9394db, #829fe4, #71aae9, #62b4ea, #4dc7f4, #3fd9f8, #45ebf7, #5ffbf1);
     border-radius: 50% 50% 50% 50% / 30% 30% 70% 70%;
     border: solid 2px #162a43;
 }
@@ -134,6 +141,13 @@ header ul li a:hover
 .yo:hover
 {
     box-shadow: 0 0 2rem 0.5rem rgb(0 0 0 / 35%);
+}
+
+@media screen and (max-width:600px)
+{
+    .yo{
+        width: -webkit-fill-available;
+    }
 }
 
 /* presentacion */
@@ -153,12 +167,14 @@ header ul li a:hover
     width: 100%;
     aspect-ratio: 1/1;
     border-radius: 2rem;
-    background: linear-gradient(45deg, transparent, var(--color-primario), transparent);
+    background-image: linear-gradient(to top, #f072ba, #db7cca, #c385d5, #aa8edb, #9394db, #829fe4, #71aae9, #62b4ea, #4dc7f4, #3fd9f8, #45ebf7, #5ffbf1);
+    border-radius: 50% 50% 50% 50% / 70% 70% 30% 30%;
     display: grid;
 }
 
 .sobreMi-image
 {
+    width: -webkit-fill-available;
     border-radius: 50% 50% 50% 50% / 70% 70% 30% 30%;
     overflow: hidden;
     border: solid 2px #162a43;
@@ -183,35 +199,100 @@ header ul li a:hover
     background: rgba(255, 255, 255, 0.25);
     border: 1px solid transparent;
     border-radius: 1rem;
-    padding: 2rem;
+    padding: 1rem;
     text-align: center;
     display: grid;
     place-items: center;
 }
 
-.sobreCartas:hover{
+.sobreCartas:hover
+{
     backdrop-filter: blur(15px);
     background: rgb(0 0 0 / 25%);
     cursor: default;
 }
 
-.icon{
+.icon
+{
     font-size: 1.4rem;
     margin-bottom: 1rem;
 }
 
-.sobreCartas h4{
+.sobreCartas h4
+{
     font-size: 0.95rem;
 }
 
-.sobreCartas small{
+.sobreCartas small
+{
     font-size: 0.7rem;
     color: var(--color-ligero);
 }
 
-.sobreMiContenido p{
+.sobreMiContenido p
+{
     margin: 2rem 0 2.6rem;
     text-align: justify;
+}
+
+@media screen and (max-width:1024px)
+{
+    .contenedorSobreMi{
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    
+    .sobreMi{
+        width: 50%;
+        margin: 2rem auto 4rem;
+    }
+
+    .sobreMiContenido p{
+        margin: 1rem 0 1.5rem;
+    }
+
+    .btn{
+        margin-left: 42%;
+    }
+}
+
+@media screen and (max-width:600px)
+{
+    .contenedorSobreMi{
+        width: 80%;
+        margin: 0 10%;
+    }
+
+    p{
+        padding: 10px 0 30px 0;
+    }
+
+    .sobreMi{
+        width: 65%;
+        margin: 0 auto 3rem;
+    }
+
+    .sobreMiCartas{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+    }
+
+    .sobreCartas{
+        width: 130px;
+    }
+
+    .sobreMiContenido{
+        text-align: center;
+    }
+    .btn{
+        margin-left: 0;
+    }
+    
+    .sobreMiContenido p{
+        margin: 1.5rem 0;
+    }
 }
 
 /* skill */
@@ -223,6 +304,7 @@ header ul li a:hover
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
+    justify-content: center;
 }
 
 .conteiner > div
@@ -249,28 +331,71 @@ header ul li a:hover
     color: var(--color-primario);
 }
 
-.contenido{
+.contenido
+{
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
 }
 
-.detalles{
+.detalles
+{
     display: flex;
     gap: 1rem;
 }
 
-.icon{
+.icon
+{
     margin-top: 6px;
     color: var(--color-primario);
 }
 
-.detalles small{
+.detalles small
+{
     margin-left: 0.5rem;
 }
 
-progress{
+progress
+{
     width: 4.5rem;
+}
+
+@media screen and (max-width:1024px) {
+    .conteiner{
+        grid-template-columns: 1fr;
+    }
+
+    .conteiner > div{
+        width: 80%;
+        padding: 2rem;
+        margin: 0 auto;
+    }
+
+    .contenido{
+        padding: 1rem;
+        place-items: center;
+    }
+}
+
+@media screen and (max-width:600px) {
+    .conteiner{
+        gap: 1.5rem;
+    }
+
+    .conteiner > div{
+        width: 100%;
+        padding: 2rem 1rem;
+    }
+
+    .detalles div{
+        position: relative;
+    }
+
+    .detalles div small{
+        position: absolute;
+        bottom: 0;
+        left: -2.5rem;
+    }
 }
 
 /* proyect */
@@ -311,6 +436,7 @@ progress{
     flex-direction: column-reverse;
     align-items: center;
     padding: 0 10px 15px 10px;
+    cursor: pointer;
 }
 
 .icono
@@ -591,6 +717,25 @@ form label input:hover, form label textarea:hover{
     box-shadow: 0 0 2rem 0.5rem rgb(0 0 0 / 35%);
 }
 
+@media screen and (max-width:1024px){
+    .contenidoContacto{
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+}
+
+@media screen and (max-width:600px){
+    .contenidoContacto{
+        width: 80%;
+        margin: 0 10% 0 10%;
+    }
+
+    footer{
+        width: 80%;
+        margin: 0 10% 20px 10%;
+    }
+}
+
 /* boton contactar */
 
 .btn
@@ -625,7 +770,7 @@ form label input:hover, form label textarea:hover{
    
 .btnC
 {
-    width: 40%;
+    width: 50%;
     backdrop-filter: blur(15px);
     background: rgba(255, 255, 255, 0.25);
     padding: 15px 15px;
@@ -641,4 +786,41 @@ form label input:hover, form label textarea:hover{
     color: #162a43;
     border: 1px;
     box-shadow: 0 0 2rem 0.5rem rgb(0 0 0 / 35%);
+}
+
+/* menu de hamburguesa */
+
+.menuIcon
+{
+    display: none;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.menuIcon span
+{
+    display: block;
+    width: 90%;
+    background: #162a43;
+    height: 2px;
+    margin: 6px 5% 0 5%;
+    transition: all 300ms;
+    transform-origin: 1.5px 100%;
+}
+
+.activeline1
+{
+    transform: rotate(45deg) translate(-2px, 1px);
+}
+
+.activeline2
+{
+    opacity: 0;
+    transform: translate(-20px);
+}
+
+.activeline3
+{
+    transform: rotate(-45deg) translate(-1px, 0px);
 }
