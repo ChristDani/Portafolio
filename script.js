@@ -20,14 +20,16 @@ function animateMenu()
 
 /* proyectos */
 
-// document.querySelector (".menuIcon") . addEventListener ("click", animateMenu) ;
-// var linel=document.querySelector(".linea1");
-// var line2=document.querySelector(".linea2");
-// var line3=document.querySelector(".linea3");
+// document.querySelector (".webs") . addEventListener ("click", cambiarOp) ;
+var opcion=document.querySelector(".sitio").addEventListener("click", cambiarOp) ;
 
-// function animateMenu()
-// {
-//     linel.classList.addEventListener ("active");
-//     line2.classList.remove ("active");
-//     line3.classList.toggle ("active");
-// }
+function cambiarOp()
+{
+    $(opcion).removeClass("active");
+    $(this).addClass("active");
+}
+
+// $(".sitio").click(function(){
+//     $(".sitio").removeClass("active");
+//     $(this).addClass("active");
+//  });
