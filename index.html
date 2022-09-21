@@ -7,6 +7,7 @@
     <title>Portafolio | Christian Daniel Campaña Díaz</title>
     <link rel="icon" href="img/science.png">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
 </head>
 <body>
 
@@ -17,7 +18,7 @@
                 <li><a href="#">Home</a></li>
                 <li><a href="#presentacion">Sobre mi</a></li>
                 <li><a href="#skill">Habilidades</a></li>
-                <li><a href="#proyect">Proyectos</a></li>
+                <!-- <li><a href="#proyect">Proyectos</a></li> -->
                 <li><a href="#contac">Contacto</a></li>
             </ul>
         </div>
@@ -248,7 +249,7 @@
         </div>
     </section>
     
-    <section class="proyect" id="proyect">
+    <!-- <section class="proyect" id="proyect">
         <hgroup>
             <h2>Mis Proyectos</h2>
         </hgroup>
@@ -259,14 +260,14 @@
                     <div class="sitio" style="background:url(img/Captura\ de\ pantalla\ \(156\).png) no-repeat center;background-size: cover;">
                         <img src="img/banco.png" alt="yo" class="icono">
                         <div class="info">
-                            <h3>Blonkisoaz</h3>
+                            <h3>Tienda_el_Farolillo</h3>
                             <span>Omuke trughte a otufta</span>
                         </div>
                     </div>
                     <div class="sitio" style="background:url(img/Captura\ de\ pantalla\ \(156\).png) no-repeat center;background-size: cover;">
                         <img src="img/farmacia.png" alt="yo" class="icono">
                         <div class="info">
-                            <h3>Blonkisoaz</h3>
+                            <h3>Ecofarma</h3>
                             <span>Omuke trughte a otufta</span>
                         </div>
                     </div>
@@ -280,7 +281,7 @@
                     <div class="sitio" style="background:url(img/Captura\ de\ pantalla\ \(156\).png) no-repeat center;background-size: cover;">
                         <img src="img/banco.png" alt="yo" class="icono">
                         <div class="info">
-                            <h3>Blonkisoaz</h3>
+                            <h3>Neon_Led_Store</h3>
                             <span>Omuke trughte a otufta</span>
                         </div>
                     </div>
@@ -335,7 +336,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <section class="contac" id="contac">
         <hgroup>
@@ -368,7 +369,7 @@
                     <a href="mailto:christiand0393@gmail.com">Enviar Mensaje</a>
                 </article>
             </div>
-            <form name="contacto" netlify>
+            <form id="formulario">
                 <label for="correo">
                     <span>Correo:</span>
                     <input type="email" name="correo" id="correo" placeholder="Ingrese su correo" required title="Formato correcto: correo@gmail.com" pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}" required autocomplete="off">
@@ -381,8 +382,12 @@
                     <span>Mensaje:</span>
                     <textarea type="text" name="mensaje" id="mensaje" rows="7" placeholder="Digite el mensaje" required></textarea>
                 </label>
-                <input type="submit" class="btnC" value="Enviar Mensaje">
+                <input type="submit" id="enviar" class="btnC" value="Enviar Mensaje">
             </form>
+            <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+            <script type="text/javascript"> 
+                emailjs.init('fzUu8hPsGfidescBP') 
+            </script>
         </div>      
     </section>
 

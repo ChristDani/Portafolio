@@ -11,7 +11,6 @@ var linel=document.querySelector(".linea1");
 var line2=document.querySelector(".linea2");
 var line3=document.querySelector(".linea3");
 var menu=document.querySelector(".menu");
-var header=document.querySelector("header");
 
 function animateMenu()
 {
@@ -19,9 +18,41 @@ function animateMenu()
     line2.classList.toggle ("activeline2");
     line3.classList.toggle ("activeline3");
     menu.classList.toggle ( "activemenu");
-    header.classList.toggle ( "active");
 }
 
 /* proyectos */
 
+$(".sitio").click(function(){
+    $(".sitio").removeClass("active");
+    $(this).addClass("active");
+    
+ });
 
+$(".app").click(function(){
+    $(".app").removeClass("active");
+    $(this).addClass("active");
+    
+ });
+
+/* contactar */
+
+const btn = document.getElementById('enviar');
+
+document.getElementById('formulario')
+ .addEventListener('submit', function(event) {
+   event.preventDefault();
+
+   btn.value = 'Enviando...';
+
+   const serviceID = 'default_service';
+   const templateID = 'template_zikyrk3';
+
+   emailjs.sendForm(serviceID, templateID, this)
+    .then(() => {
+      btn.value = 'Enviar Mensaje';
+      alert('¡Mensaje enviado correctamente...!');
+    }, (err) => {
+      btn.value = 'Enviar Mensaje';
+      alert(JSON.stringify(err));
+    });
+});

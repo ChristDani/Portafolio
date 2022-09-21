@@ -109,12 +109,6 @@ header ul li a:hover
     color: #fff;
 }
 
-@media screen and (max-width:600px)
-{
-    header{
-        overflow: hidden;
-    }
-}
 
 /* home */
 
@@ -406,11 +400,18 @@ progress
 
 .sitiosWeb, .desktop
 {
-    border: none; /*solid 2px #162a43;*/
+    border: none;
     border-radius: 20px;
     margin: 20px 0 10px 0;
+    padding: 10px 0 10px 0;
     backdrop-filter: blur(15px);
     background: rgb(255 255 255 / 25%);
+    transition: all 800ms;
+}
+
+.sitiosWeb h2, .desktop h2
+{    
+    padding: 0 0 0 30px;
 }
 
 .webs, .desk
@@ -433,6 +434,7 @@ progress
     align-items: center;
     padding: 0 10px 15px 10px;
     cursor: pointer;
+    transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
 }
 
 .icono
@@ -441,13 +443,15 @@ progress
     border-radius: 25px;
     width: 50px;
     height: 50px;
+    z-index: 4;
+    transform: rotate(-90deg);
 }
 
 .sitio.active, .app.active
 {
     display: grid;
     width: 800px;
-    padding: 0 10px 15px 20px;
+    padding: 0 10px 15px 10px;
     grid-template-columns: 10% 90%;
     align-items: end;
     color: #fff;
@@ -455,177 +459,91 @@ progress
 
 .sitio .info, .app .info
 {
-    transform: translate(100px);
-    height: 50px;
-    backdrop-filter: blur(15px);
-    background: rgb(0 0 0 / 25%);
-    padding: 5px 0 0 20px;
+    padding: 0 0 10px 0;
     border-radius: 25px;
+    color: white;
+    width: auto;
+}
+
+.sitio .info h3, .app .info h3
+{
+    transform: rotate(-90deg);
+    padding: 0 0 0 30%;
+}
+
+.sitio .info span, .app .info span
+{
+    opacity: 0;
 }
 
 .sitio.active .info, .app.active .info
 {
+    padding: 5px 20px;
+    backdrop-filter: blur(15px);
+    background: rgb(0 0 0 / 25%);
+    opacity: 100;
     transform: translate(0px);
+    width: max-content;
 }
 
-/* .webs, .desk
+.sitio.active .icono, .app.active .icono
 {
-    display: flex;
-    flex-direction: row;
-    align-items: stretch;
-    overflow: hidden;
-    min-width: 600px;
-    max-width: 900px;
-    width: calc(100% - 100px);
-    height: 400px;
+    transform: rotate(0deg);
 }
 
-.sitio, .app
+.sitio.active .info h3, .app.active .info h3
 {
-    overflow: hidden;
-    min-width: 60px;
-    margin: 10px;
-    background: var(--optionBackground, var(--defaultBackground, #E6E9ED));
-    background-size: auto 120%;
-    background-position: center;
-    cursor: pointer;
-    transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+    transform: translate(0px);
+    padding: 0;
 }
 
-.sitio:nth-child(1), .app:nth-child(1)
+.sitio.active .info span, .app.active .info span
 {
-    --defaultBackground:#ED5565;
-}
-.sitio:nth-child(2), .app:nth-child(2)
-{
-    --defaultBackground:#FC6E51;
-}
-.sitio:nth-child(3), .app:nth-child(3)
-{
-    --defaultBackground:#FFCE54;
-}
-.sitio:nth-child(4), .app:nth-child(4)
-{
-    --defaultBackground:#2ECC71;
-}
-.sitio:nth-child(5), .app:nth-child(5)
-{
-    --defaultBackground:#5D9CEC;
-}
-.sitio:nth-child(6), .app:nth-child(6)
-{
-    --defaultBackground:#AC92EC;
+    opacity: 100;
 }
 
-.active
-{
-    flex-grow: 10000;
-    max-width: 600px;
-    margin: 0px;
-    border-radius: 40px;
-    background-size: auto 100%;
-}
+@media screen and (max-width:600px){
+    .apps{
+        width: 98%;
+        margin: 0 1%;
+    }
 
-.active .shadow 
-{
-    box-shadow: inset 0 -120px 120px -120px black, inset 0 -120px 120px -100px black;
-}
+    .webs, .desk{
+        width: 98%;
+        margin: 10px 1% 0 1%;
+    }
 
-.active .label 
-{
-    bottom: 20px;
-    left: 20px;
-}
+    .sitio, .app{
+        height: 300px;
+    }
 
-.active .label .info > div 
-{
-    left: 0px;
-    opacity: 1;
-}
+    .sitio.active, .app.active{
+        justify-items: center;
+        align-content: center;
+        align-items: center;
+    }
 
-.sitio:not(.active), .app:not(.active) 
-{
-    flex-grow: 1;
-    border-radius: 30px;
-}
+    .icono{
+        width: 30px;
+        height: 30px;
+    }
 
-.sitio:not(.active) .shadow, .app:not(.active) .shadow 
-{
-    bottom: -40px;
-    box-shadow: inset 0 -120px 0px -120px black, inset 0 -120px 0px -100px black;
-}
+    .sitio.active .info, .app.active .info
+    {
+        width: auto;
+    }
 
-.sitio:not(.active) .label, .app:not(.active) .label 
-{
-    bottom: 10px;
-    left: 10px;
-}
+    .sitio .info h3, .app .info h3
+    {
+        font-size: small;
+    }
 
-.sitio:not(.active) .label .info > div, .app:not(.active) .label .info > div 
-{
-    left: 20px;
-    opacity: 0;
-}
+    .sitio.active .info h3, .app.active .info h3
+    {
+        font-size: 1.17em;
+    }
 
-.sitio .shadow, .app .shadow
-{
-    position: absolute;
-    bottom: 0px;
-    left: 0px;
-    right: 0px;
-    height: 120px;
-    transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
 }
-
-.sitio .label, .app .label
-{
-    display: flex;
-    position: absolute;
-    right: 0px;
-    height: 40px;
-    transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
-}
-
-.sitio .label .icon, .app .label .icon
-{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    min-width: 40px;
-    max-width: 40px;
-    height: 40px;
-    border-radius: 100%;
-    background-color: white;
-    color: var(--defaultBackground);
-}
-
-.sitio .label .info, .app .label .info
-{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-left: 10px;
-    color: white;
-    white-space: pre;
-}
-
-.sitio .label .info > div, .app .label .info > div
-{
-    position: relative;
-    transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95), opacity 0.5s ease-out;
-}
-
-.sitio .label .info .main, .app .label .info .main
-{
-    font-weight: bold;
-    font-size: 1.2rem;
-}
-
-.sitio .label .info .sub, .app .label .info .sub
-{
-    transition-delay: 0.1s;
-} */
 
 /* contac */
 
@@ -830,42 +748,24 @@ form label input:hover, form label textarea:hover{
     .menuIcon{
         display: block;
     }
-}
 
-.activemenu ul
-{
-    height: 27vh;
-    width: 40%;
-    position: absolute;
-    top: 84px;
-    right: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-end;
-}
+    .activemenu ul
+    {
+        position: absolute;
+        top: 84px;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-end;
+        opacity: 100;
+    }
 
-.activemenu ul li
-{
-    margin: 15px;
-    box-shadow: 0 0 2rem 0.5rem rgb(0 0 0 / 55%);
-}
-
-header.bajar.active
-{
-    height: 40vh;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: flex;
-    backdrop-filter: blur(15px);
-    background: rgb(0 0 0 / 25%);
-    flex-direction: row;
-    align-items: flex-start;
-}
-
-header.bajar.active .menuIcon
-{
-    padding-top: 18px;
+    
+    .activemenu ul li
+    {
+        transform: translate(-20px);
+        margin: 15px;
+        box-shadow: 0 0 2rem 0.5rem rgb(0 0 0 / 55%);
+    }
 }
