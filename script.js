@@ -51,6 +51,7 @@ document.getElementById('formulario')
     .then(() => {
       btn.value = 'Enviar Mensaje';
       alert('¡Mensaje enviado correctamente...!');
+      event.target.reset();
     }, (err) => {
       btn.value = 'Enviar Mensaje';
       alert(JSON.stringify(err));

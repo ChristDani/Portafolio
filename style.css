@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
 
 *
 {
@@ -174,9 +175,28 @@ header ul li a:hover
     border: solid 2px #162a43;
 }
 
-.sobreMi-image:hover
+.abajo
 {
-    transform: rotate(0);
+    width: -webkit-fill-available;
+    border-radius: 50% 50% 50% 50% / 70% 70% 30% 30%;
+    overflow: hidden;
+    border: solid 2px #162a43;
+    display: none;
+}
+
+.sobreMi:hover
+{
+    background-image: linear-gradient(to top, #40a872, #3eac7e, #3db18a, #3db595, #40b9a0, #4abfa6, #53c5ad, #5ccbb3, #6bd4b6, #7bdeb9, #8ae7bc, #9af0bf);
+}
+
+.sobreMi:hover .sobreMi-image
+{
+    display: none;
+}
+
+.sobreMi:hover .abajo
+{
+    display: block;
     box-shadow: 0 0 2rem 0.5rem rgb(0 0 0 / 35%);
 }
 
@@ -465,15 +485,27 @@ progress
     width: auto;
 }
 
+.site, .api{
+    justify-items: center;
+    align-content: center;
+}
+
+.sitio .info h2, .app .info h2
+{
+    text-shadow: -2px 0 white, 1px 0 white, 0 1px white, 0 -1px white;
+    color: black;
+    transform: rotate(-90deg);
+    padding-left: 50% !important;
+}
+
 .sitio .info h3, .app .info h3
 {
-    transform: rotate(-90deg);
-    padding: 0 0 0 30%;
+    display: none;
 }
 
 .sitio .info span, .app .info span
 {
-    opacity: 0;
+    display: none;
 }
 
 .sitio.active .info, .app.active .info
@@ -484,6 +516,7 @@ progress
     opacity: 100;
     transform: translate(0px);
     width: max-content;
+    max-width: -webkit-fill-available;
 }
 
 .sitio.active .icono, .app.active .icono
@@ -495,11 +528,25 @@ progress
 {
     transform: translate(0px);
     padding: 0;
+    display: block;
+}
+
+.sitio.active .info h3 a, .app.active .info h3 a
+{
+    text-decoration: none;
+    color: white;
+}
+
+.sitio.active .info h2, .app.active .info h2
+{
+    transform: translate(0px);
+    padding: 0;
+    display: none;
 }
 
 .sitio.active .info span, .app.active .info span
 {
-    opacity: 100;
+    display: inline;
 }
 
 @media screen and (max-width:600px){
@@ -533,7 +580,7 @@ progress
         width: auto;
     }
 
-    .sitio .info h3, .app .info h3
+    .sitio .info h2, .app .info h2
     {
         font-size: small;
     }
@@ -595,6 +642,13 @@ progress
     margin-top: 0.7rem;
     display: inline-block;
     font-size: 0.8rem;
+}
+
+.contactoOpcion a:hover
+{
+    background: rgb(255 255 255 / 30%);
+    box-shadow: 0 0 2rem 0.5rem rgb(255 255 255 / 55%);
+    border-radius: 15px;
 }
 
 form{
